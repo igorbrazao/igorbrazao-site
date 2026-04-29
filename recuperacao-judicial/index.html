@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperação Judicial — Transportes Blanco e Unirio | Igor L. Brazão</title>
+  <meta name="description" content="Processo Nº 0001573-32.2021.8.19.0067 — Documentos, habilitação de crédito e relatórios mensais da administração judicial.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://igorbrazao.com.br/recuperacao-judicial-transportes-blanco-e-unirio/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Recuperação Judicial Transportes Blanco e Unirio",
+    "url": "https://igorbrazao.com.br/recuperacao-judicial-transportes-blanco-e-unirio/",
+    "description": "Processo Nº 0001573-32.2021.8.19.0067",
+    "isPartOf": { "@type": "WebSite", "url": "https://igorbrazao.com.br" }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+          colors: { accent: '#6366f1' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg: #020203;
+      --surface: rgba(15,17,21,0.5);
+      --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(99,102,241,0.5);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #6366f1;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* Grid background */
+    .grid-bg {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    /* Mouse glow */
+    .mouse-glow {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background: radial-gradient(700px circle at var(--mx,50%) var(--my,50%),
+        rgba(99,102,241,0.12), rgba(139,92,246,0.06), transparent 50%);
+      transition: opacity 0.3s;
+    }
+
+    /* Noise overlay */
+    .noise {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(2,2,3,0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo-mask {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #fff 0%, #94a3b8 50%, #fff 100%);
+      -webkit-mask-image: url('imagem_gerada-23-1-1-e1766109867710.png');
+      mask-image: url('imagem_gerada-23-1-1-e1766109867710.png');
+      -webkit-mask-size: contain; mask-size: contain;
+      -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+      -webkit-mask-position: center; mask-position: center;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .logo-mask:hover { transform: scale(1.05); }
+
+    .nav-back {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--muted); font-size: 0.9rem; font-weight: 500;
+      text-decoration: none; transition: color 0.2s;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border); border-radius: 10px;
+    }
+    .nav-back:hover { color: #fff; border-color: rgba(255,255,255,0.15); }
+
+    /* Hero */
+    .hero {
+      position: relative; z-index: 10;
+      padding: 4rem 5% 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.4rem 1.2rem;
+      background: rgba(99,102,241,0.08);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 100px;
+      color: #a5b4fc; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 800; line-height: 1.1;
+      color: #fff; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      color: var(--muted); font-size: 0.9rem;
+    }
+
+    .hero-meta span {
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+
+    /* Main layout */
+    main {
+      position: relative; z-index: 10;
+      max-width: 960px; margin: 0 auto;
+      padding: 3rem 5% 6rem;
+    }
+
+    /* Section header */
+    .section-header {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem; padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header h2 {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: #a5b4fc;
+    }
+
+    .section-number {
+      width: 24px; height: 24px; flex-shrink: 0;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 800; color: #a5b4fc;
+    }
+
+    /* Accordion group */
+    .accordion-group { margin-bottom: 3rem; }
+
+    /* Accordion item */
+    .accordion {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 6px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .accordion:hover { border-color: rgba(99,102,241,0.3); }
+    .accordion.open { border-color: rgba(99,102,241,0.45); }
+
+    .accordion-trigger {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 1rem 1.25rem;
+      background: none; border: none; cursor: pointer;
+      text-align: left; color: var(--text);
+    }
+
+    .accordion-trigger-left {
+      display: flex; align-items: center; gap: 0.85rem;
+    }
+
+    .accordion-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    .accordion.open .accordion-icon {
+      background: rgba(99,102,241,0.25);
+      border-color: rgba(99,102,241,0.5);
+    }
+    .accordion-icon svg { width: 13px; height: 13px; color: #a5b4fc; }
+
+    .accordion-title {
+      font-size: 0.95rem; font-weight: 600; color: #e2e8f0;
+      line-height: 1.4;
+    }
+
+    .accordion-chevron {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      color: var(--muted);
+      transition: transform 0.3s ease;
+    }
+    .accordion.open .accordion-chevron { transform: rotate(180deg); color: #a5b4fc; }
+
+    .accordion-body {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .accordion.open .accordion-body { display: block; }
+
+    /* PDF link */
+    .pdf-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.55rem 1rem;
+      background: rgba(99,102,241,0.07);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 9px;
+      color: #a5b4fc; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin: 0.4rem 0.4rem 0 0;
+    }
+    .pdf-link:hover {
+      background: rgba(99,102,241,0.18);
+      border-color: rgba(99,102,241,0.5);
+      color: #fff; transform: translateY(-1px);
+    }
+    .pdf-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .pdf-links-row { padding-top: 0.75rem; display: flex; flex-wrap: wrap; }
+
+    /* Legal text */
+    .legal-text {
+      padding-top: 0.75rem;
+      font-size: 0.9rem; color: var(--muted); line-height: 1.75;
+    }
+    .legal-text strong { color: #e2e8f0; }
+    .legal-text p { margin-bottom: 0.6rem; }
+
+    /* Status badge */
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 7px;
+      color: #fbbf24; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.05em; margin-top: 0.75rem;
+    }
+
+    /* Address block */
+    .address-block {
+      padding-top: 0.75rem;
+      color: var(--muted); font-size: 0.9rem; line-height: 1.7;
+    }
+    .address-block strong { color: #e2e8f0; }
+
+    /* Email link */
+    .email-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: #a5b4fc; font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; margin-top: 0.75rem;
+      padding: 0.55rem 1rem;
+      background: rgba(99,102,241,0.07);
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 9px;
+      transition: all 0.2s;
+    }
+    .email-link:hover { color: #fff; background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.5); }
+
+    /* Alert */
+    .alert {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      padding: 1rem 1.25rem;
+      background: rgba(239,68,68,0.07);
+      border: 1px solid rgba(239,68,68,0.2);
+      border-radius: 12px;
+      margin-top: 0.75rem;
+    }
+    .alert svg { width: 18px; height: 18px; color: #f87171; flex-shrink: 0; margin-top: 1px; }
+    .alert p { font-size: 0.87rem; color: #fca5a5; line-height: 1.6; }
+    .alert strong { color: #f87171; }
+
+    /* RMA grid indicator */
+    .rma-count {
+      font-size: 0.75rem; color: var(--muted);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.15rem 0.5rem;
+      margin-left: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      position: relative; z-index: 10;
+      border-top: 1px solid var(--border);
+      padding: 2rem 5%;
+      text-align: center;
+      color: var(--muted); font-size: 0.8rem;
+    }
+    footer a { color: #a5b4fc; text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    /* Whatsapp float */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+      background: rgba(2,2,3,0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .wa-float:hover { background: rgba(20,20,25,0.9); border-color: rgba(255,255,255,0.15); transform: translateY(-2px); }
+    .wa-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .wa-icon svg { width: 20px; height: 20px; color: #fff; }
+    .wa-label { color: #fff; font-size: 0.85rem; font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .wa-label { display: none; }
+      .wa-float { padding: 0.6rem; border-radius: 50%; }
+    }
+
+    /* Scroll animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.5s ease-out forwards; }
+    .accordion-group:nth-child(1) { animation-delay: 0.05s; }
+    .accordion-group:nth-child(2) { animation-delay: 0.1s; }
+    .accordion-group:nth-child(3) { animation-delay: 0.15s; }
+
+    /* =========================================================
+       EDIÇÃO FÁCIL — Adicionar novos PDFs:
+       1. Copie um bloco <div class="accordion"> existente
+       2. Altere o título e o href do pdf-link
+       3. Para novos RMAs, copie o padrão "Nº RMA - mês-ano"
+    ========================================================= */
+  </style>
+</head>
+<body>
+
+  <div class="mouse-glow" id="glow"></div>
+  <div class="grid-bg"></div>
+  <div class="noise"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="https://igorbrazao.com.br/" title="Página inicial">
+      <div class="logo-mask"></div>
+    </a>
+    <a href="https://igorbrazao.com.br/" class="nav-back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      Página Inicial
+    </a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="process-badge">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Administração Judicial
+    </div>
+    <h1>Recuperação Judicial<br><span>Transportes Blanco e Unirio</span></h1>
+    <div class="hero-meta">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+        Processo Nº 0001573-32.2021.8.19.0067
+      </span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Lei 11.101/2005
+      </span>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main>
+
+    <!-- ===================== SEÇÃO 1 — DOCUMENTOS ===================== -->
+    <div class="accordion-group fade-up">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <h2>Documentos — Recuperação Judicial Transportes Blanco e Unirio</h2>
+      </div>
+
+      <!-- Pedido RJ -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <span class="accordion-title">Pedido Recuperação Judicial</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/INICIAL-BLANCO-E-UNIRIO.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Inicial Blanco e Unirio (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decisão Deferimento -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <span class="accordion-title">Decisão Deferimento do Processamento da Recuperação Judicial</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/Decisao-Deferimento-do-Processamento-da-Recuperacao-Judicial.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Decisão Deferimento (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edital art. 52 -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="m9 18 3-3-3-3"/><path d="M6 15H3"/></svg></div>
+            <span class="accordion-title">Edital Previsto no art. 52, § 1º — 02/10/2025</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="legal-text">
+            <p><strong>Edital Publicado:</strong> 02/09/2025.</p>
+            <p><strong>Prazo Fatal para Habilitações e Divergências:</strong> 17/09/2025</p>
+          </div>
+          <div class="pdf-links-row">
+            <a href="../pdfs/edital-art.52-publicado.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Edital art. 52 Publicado (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plano RJ -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <span class="accordion-title">Plano de Recuperação Judicial</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/Plano-de-Recuperacao-Judicial-Blanco-e-Unirio.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Plano de Recuperação Judicial (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publicação Edital do Plano -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <span class="accordion-title">Publicação do Edital do Plano de Recuperação Judicial</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="status-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Aguardando Publicação
+          </div>
+        </div>
+      </div>
+
+      <!-- Lista de Credores -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
+            <span class="accordion-title">Lista de Credores — art.7º § 2º — 27/10/2025</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/Peticao-Lista-de-Credores-Art7-271026.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Petição — Lista de Credores Art.7 §2º — 27/10/25 (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credores Trabalhistas URGENTE -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <span class="accordion-title">URGENTE — Credores Trabalhistas — Atualizado: 25/11/2025</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/Ata-Acordo-REEF-TB-Blanco-31.08.22-retificada-em-09.09.22-1.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Ata Acordo REEF TB Blanco (retificada 09.09.22)
+            </a>
+            <a href="../pdfs/Decisao-Homologacao-acordo-Global-1.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Decisão Homologação Acordo Global
+            </a>
+            <a href="../pdfs/Planilha-TB-Blanco-listagem-atualizada-06.05.24.xlsx" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              Planilha TB Blanco — 06.05.24 (XLSX)
+            </a>
+            <a href="../pdfs/Planilha-TB-Blanco-listagem-atualizada-30.06.23-1.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Planilha TB Blanco — 30.06.23
+            </a>
+            <a href="../pdfs/Planilha-TB-Blanco-listagem-atualizada-retardatarios-2.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Planilha TB Blanco — Retardatários
+            </a>
+            <a href="../pdfs/Credores-retardatarios-out24.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Credores Retardatários — Atualizado até 21/10/2024
+            </a>
+            <a href="../pdfs/Credores-REEF-out24.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Credores Incluídos REEF — Atualizado até 21/10/2024
+            </a>
+          </div>
+          <div class="alert" style="margin-top:1rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p>Credores Trabalhistas Classe I das Empresas Transportes Blanco e UNIRIO — caso seu crédito não esteja na lista acima, entre em contato imediatamente com a Administração Judicial ou encaminhe a solicitação para inclusão no REEF pelo e-mail <a href="mailto:trabalhistas@igorbrazao.com.br" style="color:#f87171;">trabalhistas@igorbrazao.com.br</a>.<br><br>
+            <strong>Atenção:</strong> "Por determinação do Exmo Sr. Juiz Gestor da Coordenadoria de Apoio à Execução–CAEX, Igor Fonseca Rodrigues, as inserções de credores nas listagens dos REEFs se dão, exclusivamente, a pedido dos juízos de origem dos respectivos processos" (Resolução Administrativa nº 08/2025 do TRT1).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Novo Endereço -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <span class="accordion-title">Novo Endereço das Recuperandas</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="address-block">
+            <strong>Novo endereço das recuperandas:</strong><br>
+            Est. Campo Alegre, nº 2350, Parte, Campo Alegre,<br>
+            Queimado — Rio de Janeiro / RJ
+          </div>
+        </div>
+      </div>
+    </div><!-- /accordion-group 1 -->
+
+
+    <!-- ===================== SEÇÃO 2 — HABILITAÇÃO ===================== -->
+    <div class="accordion-group fade-up">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <h2>Para Habilitação do Seu Crédito</h2>
+      </div>
+
+      <!-- Critérios -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <span class="accordion-title">Critérios para Habilitação do Crédito</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="legal-text">
+            <p><strong>Art. 9º</strong> A habilitação de crédito realizada pelo credor nos termos do art. 7º, § 1º, desta Lei deverá conter:</p>
+            <p><strong>I</strong> — o nome, o endereço do credor e o endereço em que receberá comunicação de qualquer ato do processo;</p>
+            <p><strong>II</strong> — o valor do crédito, atualizado até a data da decretação da falência ou do pedido de recuperação judicial, sua origem e classificação;</p>
+            <p><strong>III</strong> — os documentos comprobatórios do crédito e a indicação das demais provas a serem produzidas;</p>
+            <p><strong>IV</strong> — a indicação da garantia prestada pelo devedor, se houver, e o respectivo instrumento;</p>
+            <p><strong>V</strong> — a especificação do objeto da garantia que estiver na posse do credor.</p>
+            <p><strong>Parágrafo único.</strong> Os títulos e documentos que legitimam os créditos deverão ser exibidos no original ou por cópias autenticadas se estiverem juntados em outro processo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prazo -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <span class="accordion-title">Prazo para Habilitação</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="legal-text">
+            <p>Art.7 § 1º Publicado o edital previsto no art. 52, § 1º, ou no parágrafo único do art. 99 desta Lei, os credores terão o prazo de <strong>15 (quinze) dias</strong> para apresentar ao administrador judicial suas habilitações ou suas divergências quanto aos créditos relacionados.</p>
+            <br>
+            <p><strong>Edital Publicado:</strong> 25/10/2021.</p>
+            <p><strong>Prazo Fatal para Habilitações e Divergências:</strong> 09/11/2021.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+            <span class="accordion-title">Formulário para Habilitação</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/Formulario-Habilitacao-Creditos.docx" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Formulário Habilitação de Créditos (DOCX)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Encaminhar -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+            <span class="accordion-title">Encaminhar Crédito Para</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <a href="mailto:habilitacao@igorbrazao.com.br" class="email-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            habilitacao@igorbrazao.com.br
+          </a>
+        </div>
+      </div>
+    </div><!-- /accordion-group 2 -->
+
+
+    <!-- ===================== SEÇÃO 3 — RELATÓRIOS RMA ===================== -->
+    <div class="accordion-group fade-up">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <h2>Relatórios da Administração Judicial <span class="rma-count">53 RMAs</span></h2>
+      </div>
+
+      <!-- Relatório sobre o Plano -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+            <span class="accordion-title">Relatório sobre Plano de Recuperação Judicial</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/RELATORIO-SOBRE-PLANO-DE-RECUPERACAO-JUDICIAL.pdf" target="_blank" class="pdf-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Relatório sobre Plano de RJ (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RMAs 1 a 19 -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <span class="accordion-title">RMAs 1º a 19º — ago/2021 a fev/2023</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/RMA-1-Ago21.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>1º RMA — ago/21</a>
+            <a href="../pdfs/RMA-2-out21.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>2º RMA — out/21</a>
+            <a href="../pdfs/RMA-3-nov21.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>3º RMA — nov/21</a>
+            <a href="../pdfs/RMA-4-nov21-1.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>4º RMA — nov/21</a>
+            <a href="../pdfs/RMA-5-dez21.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>5º RMA — dez/21</a>
+            <a href="../pdfs/RMA-6-jan22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>6º RMA — jan/22</a>
+            <a href="../pdfs/RMA-7-fev22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>7º RMA — fev/22</a>
+            <a href="../pdfs/RMA-8-mar22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>8º RMA — mar/22</a>
+            <a href="../pdfs/RMA-9-abril-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>9º RMA — abr/22</a>
+            <a href="../pdfs/RMA-10-maio-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>10º RMA — mai/22</a>
+            <a href="../pdfs/RMA-11-junho-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>11º RMA — jun/22</a>
+            <a href="../pdfs/RMA-12-julho-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>12º RMA — jul/22</a>
+            <a href="../pdfs/RMA-13-ago-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>13º RMA — ago/22</a>
+            <a href="../pdfs/RMA-14-set-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>14º RMA — set/22</a>
+            <a href="../pdfs/RMA-15-out-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>15º RMA — out/22</a>
+            <a href="../pdfs/RMA-16-nov-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>16º RMA — nov/22</a>
+            <a href="../pdfs/RMA-17-dez-22.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>17º RMA — dez/22</a>
+            <a href="../pdfs/RMA-18-jan-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>18º RMA — jan/23</a>
+            <a href="../pdfs/RMA-19-fev-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>19º RMA — fev/23</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RMAs 20 a 29 -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <span class="accordion-title">RMAs 20º a 29º — mar/2023 a dez/2023</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/RMA-20-mar-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>20º RMA — mar/23</a>
+            <a href="../pdfs/RMA-21-abr-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>21º RMA — abr/23</a>
+            <a href="../pdfs/RMA-22-mai-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>22º RMA — mai/23</a>
+            <a href="../pdfs/RMA-23-jun-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>23º RMA — jun/23</a>
+            <a href="../pdfs/RMA-24-jul-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>24º RMA — jul/23</a>
+            <a href="../pdfs/RMA-25-ago-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>25º RMA — ago/23</a>
+            <a href="../pdfs/RMA-26-set-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>26º RMA — set/23</a>
+            <a href="../pdfs/RMA-27-out-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>27º RMA — out/23</a>
+            <a href="../pdfs/RMA-28-nov-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>28º RMA — nov/23</a>
+            <a href="../pdfs/RMA-29-dez-23.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>29º RMA — dez/23</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RMAs 30 a 45 -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <span class="accordion-title">RMAs 30º a 45º — jan/2024 a abr/2025</span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/RMA-30-jan-24.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>30º RMA — jan/24</a>
+            <a href="../pdfs/RMA-31-fev-24.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>31º RMA — fev/24</a>
+            <a href="../pdfs/RMA-32-mar-24.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>32º RMA — mar/24</a>
+            <a href="../pdfs/RMA-33-abr-24.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>33º RMA — abr/24</a>
+            <a href="../pdfs/RMA-34-maio-24.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>34º RMA — mai/24</a>
+            <a href="../pdfs/RMA-35-junho-24.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>35º RMA — jun/24</a>
+            <a href="../pdfs/RMA-36-julho-24-01.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>36º RMA — jul/24</a>
+            <a href="../pdfs/RMA-37-agoo-24-01-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>37º RMA — ago/24</a>
+            <a href="../pdfs/RMA-38-set-24-01-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>38º RMA — set/24</a>
+            <a href="../pdfs/RMA-39-out24-01-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>39º RMA — out/24</a>
+            <a href="../pdfs/RMA-40-nov-24-01-Copiar.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>40º RMA — nov/24</a>
+            <a href="../pdfs/RMA-41-dez-24-01-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>41º RMA — dez/24</a>
+            <a href="../pdfs/RMA-42-jan-25-01-Copiar.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>42º RMA — jan/25</a>
+            <a href="../pdfs/RMA-43-fev-25.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>43º RMA — fev/25</a>
+            <a href="../pdfs/RMA-44-mar-25.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>44º RMA — mar/25</a>
+            <a href="../pdfs/RMA-45-abr-25.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>45º RMA — abr/25</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RMAs 46 a 53 (mais recentes) -->
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg></div>
+            <span class="accordion-title">RMAs 46º a 53º — mai/2025 a dez/2025 <span class="rma-count" style="background:rgba(99,102,241,0.15);border-color:rgba(99,102,241,0.3);color:#a5b4fc;">Mais recentes</span></span>
+          </div>
+          <svg class="accordion-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="../pdfs/RMA-46-mai-25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>46º RMA — mai/25</a>
+            <a href="../pdfs/RMA-47-jun-25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>47º RMA — jun/25</a>
+            <a href="../pdfs/RMA-48-jul-25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>48º RMA — jul/25</a>
+            <a href="../pdfs/RMA-49-ago25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>49º RMA — ago/25</a>
+            <a href="../pdfs/RMA-50-set25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>50º RMA — set/25</a>
+            <a href="../pdfs/RMA-51-out25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>51º RMA — out/25</a>
+            <a href="../pdfs/RMA-52-nov25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>52º RMA — nov/25</a>
+            <a href="../pdfs/RMA-53-dez25-.pdf" target="_blank" class="pdf-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>53º RMA — dez/25</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           ADICIONAR NOVO RMA: Copie o bloco abaixo e cole após o 53º.
+           Altere o número, mês/ano e a URL do href.
+           ============================================================
+      <div class="accordion">
+        <button class="accordion-trigger" onclick="toggle(this)">
+          <div class="accordion-trigger-left">
+            <div class="accordion-icon"><svg ...></svg></div>
+            <span class="accordion-title">54º RMA — jan/26</span>
+          </div>
+          <svg class="accordion-chevron" ...></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="pdf-links-row">
+            <a href="COLE_A_URL_DO_PDF_AQUI" target="_blank" class="pdf-link">
+              54º RMA — jan/26 (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+      -->
+
+    </div><!-- /accordion-group 3 -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Copyright © 2026 Igor Brazão Serviços de Perícias Ltda — 
+      <a href="https://igorbrazao.com.br/">igorbrazao.com.br</a> · 
+      <a href="mailto:contato@igorbrazao.com.br">contato@igorbrazao.com.br</a> · 
+      (21) 99326-2984
+    </p>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/5521993262984?text=Olá,%20gostaria%20de%20informações%20sobre%20a%20recuperação%20judicial%20Transportes%20Blanco%20e%20Unirio." target="_blank" class="wa-float" aria-label="Fale conosco pelo WhatsApp">
+    <div class="wa-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </div>
+    <span class="wa-label">Fale Conosco</span>
+  </a>
+
+  <script>
+    // Mouse glow
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', e => {
+      requestAnimationFrame(() => {
+        glow.style.setProperty('--mx', e.clientX + 'px');
+        glow.style.setProperty('--my', e.clientY + 'px');
+      });
+    });
+
+    // Accordion toggle
+    function toggle(btn) {
+      const item = btn.closest('.accordion');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.accordion.open').forEach(el => el.classList.remove('open'));
+      // Open clicked if it was closed
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
