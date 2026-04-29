@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Igor L. Brazão | Perícia Contábil, Administração Judicial e Valuation</title>
+    <meta name="description" content="Escritório técnico focado em Perícia Econômico-Financeira de alta complexidade, Administração Judicial e Valuation estratégico corporativo.">
+    <meta name="keywords" content="Perícia Judicial, Perícia Contábil, Administração Judicial, Valuation, Apuração de Haveres, Cálculos Judiciais, Assistência Técnica">
+    <meta name="robots" content="index, follow">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Igor L. Brazão - Perícia & Inteligência Financeira",
+      "url": "https://igorbrazao.com.br",
+      "email": "contato@igorbrazao.com.br",
+      "description": "Atuação institucional em perícia econômico-financeira, liquidação de sentença e administração judicial.",
+      "founder": {
+        "@type": "Person",
+        "name": "Igor L. Brazão",
+        "jobTitle": "Perito e Administrador Judicial"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        'bg-body': '#020203',
+                        'accent': '#6366f1',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #020203;
+            color: #e2e8f0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow: hidden; 
+            -webkit-font-smoothing: antialiased;
+            margin: 0; padding: 0;
+        }
+
+        .grid-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none; z-index: 1;
+        }
+
+        .noise-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none; z-index: 2;
+        }
+
+        .mouse-glow {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none; z-index: 0;
+            background: radial-gradient(
+                700px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(99, 102, 241, 0.15), 
+                rgba(139, 92, 246, 0.08), 
+                transparent 50%
+            );
+            transition: opacity 0.3s ease;
+        }
+
+        .text-chrome {
+            background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-silver-mask {
+            width: 72px; height: 72px;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 50%, #fff 100%);
+            -webkit-mask-image: url('images/logo.png');
+            mask-image: url('images/logo.png');
+            -webkit-mask-size: contain; mask-size: contain;
+            -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+            -webkit-mask-position: center; mask-position: center;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+            transition: transform 0.3s ease;
+        }
+        .logo-silver-mask:hover { transform: scale(1.05); }
+
+        .app-container {
+            height: 100vh; display: flex; flex-direction: column;
+            position: relative; z-index: 10;
+        }
+
+        .top-navbar {
+            background: rgba(2, 2, 3, 0.7); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1rem 4%; display: flex; align-items: center; justify-content: space-between;
+            z-index: 50;
+        }
+
+        .nav-btn {
+            color: #94a3b8; font-size: 1.125rem; font-weight: 500;
+            padding: 0.5rem 1.5rem; transition: all 0.3s ease; position: relative;
+        }
+        .nav-btn:hover { color: #ffffff; }
+        .nav-btn.active { color: #ffffff; font-weight: 700; }
+        .nav-btn::after {
+            content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
+            width: 0; height: 2px; background: #6366f1; transition: width 0.3s ease;
+        }
+        .nav-btn.active::after { width: 100%; }
+
+        .content-scroll-area {
+            flex: 1; overflow-y: auto; width: 100%; scroll-behavior: smooth;
+        }
+
+        .section-content {
+            display: none; width: 100%; max-width: 1440px; margin: 0 auto;
+            padding: 4rem 4%; animation: fadeIn 0.5s ease-out forwards;
+        }
+        .section-content.active { display: block; }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .institutional-card {
+            background: rgba(15, 17, 21, 0.4); border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px; padding: 3rem; height: 100%; display: flex; flex-direction: column;
+            transition: all 0.4s ease; backdrop-filter: blur(8px);
+        }
+        .institutional-card:hover {
+            border-color: rgba(99, 102, 241, 0.5); transform: translateY(-8px);
+            background: rgba(20, 22, 28, 0.7); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);
+        }
+
+        .input-dark {
+            background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);
+            color: white; padding: 1.25rem; border-radius: 12px; width: 100%;
+            outline: none; transition: 0.3s; font-size: 1.125rem;
+        }
+        .input-dark:focus { border-color: #6366f1; background: rgba(0,0,0,0.6); }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+    </style>
+</head>
+<body>
+
+    <div class="mouse-glow" id="glow-effect"></div>
+    <div class="grid-bg"></div>
+    <div class="noise-overlay"></div>
+
+    <div class="app-container">
+        
+        <header class="top-navbar">
+            <div class="flex items-center">
+                <div class="logo-silver-mask cursor-pointer" title="Igor L. Brazão" onclick="document.querySelector('[data-target=\'view-home\']').click()"></div>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-6">
+                <button class="nav-btn active" data-target="view-home">Início</button>
+                <button class="nav-btn" data-target="view-atuacao">Áreas de Atuação</button>
+                <button class="nav-btn" data-target="view-escritorio">A Instituição</button>
+            </nav>
+
+            <button class="hidden md:block bg-white text-black font-bold rounded-xl px-8 py-3 hover:bg-gray-200 hover:scale-105 transition-all" data-target="view-contato">
+                Contato Técnico
+            </button>
+        </header>
+
+        <main class="content-scroll-area">
+            
+            <section id="view-home" class="section-content active">
+                <div class="min-h-[75vh] flex flex-col items-center justify-center text-center">
+                    <span class="px-5 py-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm md:text-base font-bold uppercase tracking-[0.2em] rounded-full mb-10">
+                        Perícia Econômico-Financeira
+                    </span>
+                    
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-8 leading-[1.05] tracking-tight max-w-6xl mx-auto drop-shadow-2xl">
+                        Inteligência Financeira para <br>
+                        <span class="text-chrome">Decisões Complexas.</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-3xl text-slate-400 font-light max-w-4xl mx-auto leading-relaxed mb-10">
+                        O rigor das ciências econômicas aplicado à fundamentação irrefutável de cálculos judiciais e reestruturação de empresas.
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-16 text-lg md:text-xl font-medium text-slate-300">
+                        <span class="flex items-center gap-3"><i data-lucide="scale" class="w-6 h-6 text-indigo-400"></i> Perícia & Cálculos</span>
+                        <span class="flex items-center gap-3"><i data-lucide="building-2" class="w-6 h-6 text-indigo-400"></i> Administração Judicial</span>
+                        <span class="flex items-center gap-3"><i data-lucide="pie-chart" class="w-6 h-6 text-indigo-400"></i> Valuation</span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full max-w-3xl mx-auto">
+                        <a href="https://diagnostico.igorbrazao.com.br/" target="_blank" class="w-full sm:w-auto px-8 py-5 bg-gradient-to-r from-indigo-600 to-blue-700 text-white text-xl font-bold rounded-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(99,102,241,0.6)] flex justify-center items-center gap-3">
+                            <i data-lucide="file-search" class="w-6 h-6"></i> Diagnóstico Prévio
+                        </a>
+                        <button class="w-full sm:w-auto px-8 py-5 bg-white/5 border border-white/20 text-white text-xl font-bold rounded-xl hover:bg-white hover:text-black transition-all flex justify-center items-center gap-3" onclick="document.querySelector('[data-target=\'view-atuacao\']').click()">
+                            Explorar Atuação
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-atuacao" class="section-content">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-16 tracking-tight">Rigor Analítico em <br><span class="text-slate-500">Quatro Pilares.</span></h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+                    
+                    <article class="institutional-card">
+                        <i data-lucide="scale" class="w-14 h-14 text-indigo-400 mb-8 opacity-90"></i>
+                        <h3 class="text-3xl xl:text-4xl font-bold text-white mb-6 leading-tight">Perícia Judicial e Cálculos</h3>
+                        <p class="text-xl leading-relaxed text-slate-400 font-light flex-grow">
+                            Atuação em processos de alta complexidade. Elaboração de laudos periciais e pareceres técnicos embasados normativamente para liquidação rigorosa de sentenças.
+                        </p>
+                    </article>
+
+                    <article class="institutional-card">
+                        <i data-lucide="building-2" class="w-14 h-14 text-indigo-400 mb-8 opacity-90"></i>
+                        <h3 class="text-3xl xl:text-4xl font-bold text-white mb-6 leading-tight">Administração Judicial</h3>
+                        <p class="text-xl leading-relaxed text-slate-400 font-light flex-grow mb-8">
+                            Auxílio ao juízo regido pela LRF. Fiscalização da viabilidade econômica das empresas, relacionamento com credores e elaboração do Quadro-Geral. Elaboração de Plano de Recuperação Judicial. Consultoria em Reestruturação de Empresas.
+                        </p>
+                        <a href="recuperacao-judicial/" class="inline-flex items-center gap-3 text-white hover:text-indigo-400 font-semibold text-lg transition-colors mt-auto border-t border-white/10 pt-8">
+                            Área do Credor: Blanco & Unirio <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </article>
+
+                    <article class="institutional-card">
+                        <i data-lucide="pie-chart" class="w-14 h-14 text-indigo-400 mb-8 opacity-90"></i>
+                        <h3 class="text-3xl xl:text-4xl font-bold text-white mb-6 leading-tight">Valuation e Haveres</h3>
+                        <p class="text-xl leading-relaxed text-slate-400 font-light flex-grow">
+                            Avaliação técnica do valor justo de companhias e ativos em contextos de dissolução societária, fusões, aquisições e litígios (método FCD).
+                        </p>
+                    </article>
+
+                    <article class="institutional-card border-indigo-500/30 bg-indigo-900/10">
+                        <i data-lucide="file-search" class="w-14 h-14 text-indigo-400 mb-8 opacity-90"></i>
+                        <h3 class="text-3xl xl:text-4xl font-bold text-white mb-6 leading-tight">Diagnóstico de Onerosidade</h3>
+                        <p class="text-xl leading-relaxed text-slate-400 font-light flex-grow mb-8">
+                            Ferramental analítico avançado para identificar onerosidade excessiva e juros abusivos em contratos bancários, gerando lastro irrefutável para teses revisionais.
+                        </p>
+                        <a href="https://diagnostico.igorbrazao.com.br/" target="_blank" class="inline-flex items-center gap-3 text-indigo-300 hover:text-white font-semibold text-lg transition-colors mt-auto border-t border-indigo-500/20 pt-8">
+                            Acessar Plataforma de Diagnóstico <i data-lucide="external-link" class="w-5 h-5"></i>
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+
+            <section id="view-escritorio" class="section-content">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-center">
+                    
+                    <div class="lg:col-span-7">
+                        <h2 class="text-5xl lg:text-6xl font-bold text-white mb-10 tracking-tight leading-tight">
+                            Independência e <br>
+                            <span class="text-chrome">Credibilidade.</span>
+                        </h2>
+                        
+                        <div class="space-y-8">
+                            <p class="text-2xl text-slate-300 leading-relaxed font-light">
+                                O contencioso estratégico exige independência absoluta. Nosso escritório atua guiado pelas diretrizes do Conselho Regional de Economia.
+                            </p>
+                            <p class="text-2xl text-slate-300 leading-relaxed font-light">
+                                Operamos com infraestrutura nacionalizada, permitindo a defesa técnica robusta de interesses econômicos de bancas de advocacia em qualquer jurisdição do país.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 w-full">
+                        <div class="bg-white/[0.03] p-10 xl:p-14 rounded-3xl border border-white/5 shadow-2xl backdrop-blur-md w-full">
+                            <div class="flex items-center gap-6 mb-12 pb-12 border-b border-white/5">
+                                <div class="w-24 h-24 rounded-full bg-indigo-900/30 border border-indigo-500/30 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="award" class="w-12 h-12 text-indigo-400"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white mb-2">Responsabilidade Técnica</h3>
+                                    <p class="text-3xl text-indigo-400 font-medium tracking-tight">Igor L. Brazão</p>
+                                    <p class="text-sm text-slate-500 mt-2 uppercase tracking-widest font-bold">Perito & Adm. Judicial</p>
+                                </div>
+                            </div>
+                            
+                            <ul class="space-y-8 text-xl xl:text-2xl text-slate-300 font-light">
+                                <li class="flex items-center gap-5">
+                                    <i data-lucide="check-circle-2" class="text-indigo-500 w-8 h-8 flex-shrink-0"></i> 
+                                    <span>Registro <strong>Corecon/RJ: 25013</strong></span>
+                                </li>
+                                <li class="flex items-center gap-5">
+                                    <i data-lucide="check-circle-2" class="text-indigo-500 w-8 h-8 flex-shrink-0"></i> 
+                                    <span>Atuação Nacional</span>
+                                </li>
+                                <li class="flex items-center gap-5">
+                                    <i data-lucide="check-circle-2" class="text-indigo-500 w-8 h-8 flex-shrink-0"></i> 
+                                    <span>Sigilo Profissional Integral</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="view-contato" class="section-content">
+                <div class="max-w-5xl mx-auto">
+                    <h2 class="text-5xl lg:text-6xl font-bold text-center text-white mb-8 tracking-tight">Submeta seu Caso</h2>
+                    <p class="text-2xl text-center text-slate-400 font-light mb-16 max-w-3xl mx-auto">
+                        Apresente os parâmetros do seu litígio ou tese jurídica para nossa análise de viabilidade pericial.
+                    </p>
+
+                    <div class="bg-white/[0.03] p-10 lg:p-16 rounded-[2.5rem] border border-white/5 shadow-2xl backdrop-blur-md">
+                        <form action="https://formspree.io/f/xlgrevrd" method="POST" class="space-y-10">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                <div>
+                                    <label class="block text-slate-400 text-sm font-bold uppercase tracking-[0.1em] mb-3">Solicitante / Advogado</label>
+                                    <input type="text" name="nome" class="input-dark" required>
+                                </div>
+                                <div>
+                                    <label class="block text-slate-400 text-sm font-bold uppercase tracking-[0.1em] mb-3">E-mail Profissional</label>
+                                    <input type="email" name="email" class="input-dark" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-slate-400 text-sm font-bold uppercase tracking-[0.1em] mb-3">Natureza da Demanda</label>
+                                <select name="assunto" class="input-dark text-slate-300">
+                                    <option value="" disabled selected>Selecione a área principal...</option>
+                                    <option value="pericia">Perícia Contábil / Econômica</option>
+                                    <option value="contratos">Análise de Onerosidade de Contratos</option>
+                                    <option value="recuperacao">Administração Judicial</option>
+                                    <option value="valuation">Valuation & Apuração de Haveres</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-slate-400 text-sm font-bold uppercase tracking-[0.1em] mb-3">Síntese do Caso</label>
+                                <textarea name="mensagem" rows="6" class="input-dark resize-none" required></textarea>
+                            </div>
+                            
+                            <button class="w-full bg-white text-black font-bold py-6 text-2xl rounded-xl hover:bg-slate-200 transition-colors mt-4 shadow-[0_0_30px_-10px_rgba(255,255,255,0.3)]">
+                                Enviar Solicitação Formal
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="mt-16 text-center flex flex-col items-center justify-center gap-4">
+                        <p class="text-slate-500 text-lg uppercase tracking-[0.2em] font-bold">Ou contate diretamente</p>
+                        <a href="mailto:contato@igorbrazao.com.br" class="text-3xl lg:text-4xl font-medium text-white hover:text-indigo-400 transition-colors">contato@igorbrazao.com.br</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const glowEffect = document.getElementById('glow-effect');
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                glowEffect.style.setProperty('--mouse-x', `${e.clientX}px`);
+                glowEffect.style.setProperty('--mouse-y', `${e.clientY}px`);
+            });
+        });
+
+        const navButtons = document.querySelectorAll('.nav-btn, button[data-target="view-contato"]');
+        const sections = document.querySelectorAll('.section-content');
+        const mainScrollArea = document.querySelector('.content-scroll-area');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-target');
+                document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                if(button.classList.contains('nav-btn')) button.classList.add('active');
+                sections.forEach(sec => sec.classList.remove('active'));
+                document.getElementById(targetId).classList.add('active');
+                mainScrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <a href="https://wa.me/5521993262984?text=Olá,%20gostaria%20de%20solicitar%20uma%20avaliação%20técnica." 
+       target="_blank" 
+       class="fixed bottom-10 right-10 z-50 flex items-center gap-5 px-8 py-5 bg-white/[0.05] backdrop-blur-md border border-white/10 rounded-[2rem] shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:bg-white/[0.1] hover:border-white/20 hover:scale-105 transition-all group">
+        <div class="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center shadow-lg flex-shrink-0">
+            <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        </div>
+        <span class="text-white font-bold text-lg hidden md:block tracking-wide pr-2">Fale Conosco</span>
+    </a>
+
+</body>
+</html>
