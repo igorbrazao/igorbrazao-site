@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apuração de Haveres na Saída de Sócio: Como se Calcula o Valor Justo | Igor L. Brazão</title>
+<meta name="description" content="Como se apura o valor da quota do sócio que sai: o critério do balanço de determinação, a avaliação a valor de mercado, o intangível e o que o Código Civil e a jurisprudência definem sobre a apuração de haveres.">
+<link rel="canonical" href="https://igorbrazao.com.br/apuracao-haveres-saida-socio.html">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta property="og:title" content="Apuração de Haveres na Saída de Sócio: Como se Calcula o Valor Justo">
+<meta property="og:description" content="Balanço de determinação, avaliação a valor de mercado e o que define o valor justo da quota do sócio que sai.">
+<meta property="og:url" content="https://igorbrazao.com.br/apuracao-haveres-saida-socio.html">
+<meta property="og:type" content="article">
+<style>
+/* ==========================================================================
+   Igor L. Brazão — Design System
+   Tinta (navegação/hero) + Papel (dossiê/conteúdo) + Bronze (selo)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --ink:        #0a0c10;
+  --ink-2:      #12151d;
+  --ink-line:   rgba(255,255,255,0.08);
+  --ink-text:   #cbd2de;
+  --ink-muted:  #7c8494;
+
+  --paper:      #f6f1e7;
+  --paper-2:    #efe7d6;
+  --paper-line: #ddd2b7;
+  --ink-on-paper:   #262320;
+  --muted-on-paper: #837a67;
+
+  --bronze:     #b08d57;
+  --bronze-dark:#8a6d3f;
+  --bronze-tint: rgba(176,141,87,0.12);
+
+  --green: #3f6b4c;
+
+  --radius: 4px;
+  --radius-lg: 10px;
+  --max: 1180px;
+
+  --font-display: 'Cormorant', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--paper);
+  color:var(--ink-on-paper);
+  font-family:var(--font-body);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+ul{ list-style:none; }
+
+.container{ max-width:var(--max); margin:0 auto; padding:0 6%; }
+@media (min-width:900px){ .container{ padding:0 3%; } }
+
+/* ---------- Utility labels (carimbo / eyebrow) ---------- */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem;
+  font-family:var(--font-mono);
+  font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--bronze-dark);
+}
+.eyebrow::before{ content:''; width:16px; height:1px; background:var(--bronze); }
+.eyebrow.on-dark{ color:#d9c199; }
+.eyebrow.on-dark::before{ background:#d9c199; }
+
+.stamp{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:.62rem; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--bronze-dark);
+  border:1px solid var(--bronze);
+  border-radius:100px;
+  padding:.3rem .8rem;
+  transform:rotate(-2deg);
+  background:var(--bronze-tint);
+}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:rgba(10,12,16,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--ink-line);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  height:66px;
+}
+.brand{
+  display:flex; align-items:center; gap:.65rem;
+  font-family:var(--font-display); font-weight:600; font-size:1.15rem;
+  color:#fff; text-decoration:none;
+}
+.brand-mark{
+  width:42px; height:42px; border-radius:50%;
+  background:#fff;
+  border:1px solid var(--bronze);
+  padding:7px;
+  object-fit:contain;
+  flex-shrink:0;
+}
+.brand{ display:inline-flex; }
+.main-nav{ display:none; align-items:center; gap:.25rem; }
+.main-nav a{
+  font-size:.82rem; font-weight:500; color:var(--ink-muted);
+  text-decoration:none; padding:.5rem .8rem; border-radius:6px;
+  transition:.2s;
+}
+.main-nav a:hover, .main-nav a.active{ color:#fff; background:rgba(255,255,255,0.06); }
+.main-nav .has-sub{ position:relative; }
+.subnav{
+  display:none; position:absolute; top:100%; left:0; margin-top:.5rem;
+  background:var(--ink-2); border:1px solid var(--ink-line); border-radius:10px;
+  min-width:280px; padding:.5rem; box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+.main-nav .has-sub:hover .subnav{ display:block; }
+.subnav a{ display:block; padding:.6rem .75rem; border-radius:6px; font-size:.8rem; }
+.subnav a small{ display:block; color:var(--ink-muted); font-weight:400; margin-top:2px; font-size:.72rem; }
+
+.btn-header{
+  font-size:.8rem; font-weight:700; padding:.55rem 1.1rem;
+  background:var(--bronze); color:#1a1305; border:none; border-radius:6px;
+  text-decoration:none; white-space:nowrap; transition:.2s;
+}
+.btn-header:hover{ background:#c39d63; }
+
+.nav-toggle{ display:flex; background:none; border:1px solid var(--ink-line); border-radius:6px; padding:.4rem .6rem; color:#fff; }
+@media (min-width:1080px){
+  .main-nav{ display:flex; }
+  .nav-toggle{ display:none; }
+}
+
+/* ---------- Hero (tinta) ---------- */
+.hero{
+  background:var(--ink);
+  color:#fff;
+  padding:4.5rem 0 0;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(600px 300px at 85% 0%, rgba(176,141,87,0.14), transparent 60%);
+  pointer-events:none;
+}
+.hero-inner{ position:relative; max-width:760px; }
+.hero h1{
+  font-family:var(--font-display); font-weight:600;
+  font-size:clamp(2.1rem,4vw,3.4rem); line-height:1.12; margin:1rem 0 1.1rem;
+  color:#fff;
+}
+.hero p.lead{ font-size:1rem; color:var(--ink-text); max-width:560px; margin-bottom:1.75rem; }
+.hero-ctas{ display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+
+.btn-primary{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:var(--bronze); color:#1a1305;
+  font-weight:700; font-size:.85rem;
+  padding:.75rem 1.4rem; border-radius:6px; border:none;
+  text-decoration:none; transition:.2s;
+}
+.btn-primary:hover{ background:#c39d63; transform:translateY(-1px); }
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:transparent; color:#fff;
+  font-weight:700; font-size:.85rem;
+  padding:.75rem 1.4rem; border-radius:6px; border:1px solid rgba(255,255,255,0.25);
+  text-decoration:none; transition:.2s;
+}
+.btn-ghost:hover{ border-color:#fff; }
+
+/* ---------- Índice ao vivo (ticker) — utilidade real + frescor de conteúdo ---------- */
+.index-strip{
+  border-top:1px solid var(--ink-line);
+  background:rgba(255,255,255,0.02);
+}
+.index-strip-inner{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:0;
+}
+@media (min-width:700px){ .index-strip-inner{ grid-template-columns:repeat(4,1fr); } }
+.index-item{
+  padding:.9rem 1.2rem; border-right:1px solid var(--ink-line); border-bottom:1px solid var(--ink-line);
+}
+@media (min-width:700px){ .index-item:nth-child(4){ border-right:none; } }
+.index-item:last-child{ border-right:none; }
+.index-label{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); }
+.index-value{ font-family:var(--font-mono); font-size:1.05rem; color:#fff; margin-top:.15rem; font-weight:500; }
+.index-note{ font-size:.68rem; color:var(--ink-muted); text-align:center; padding:.6rem 0; }
+
+/* ---------- Dossiê sections (papel) ---------- */
+.dossie{ background:var(--paper); padding:4rem 0; }
+.dossie.alt{ background:var(--paper-2); }
+.dossie-head{ max-width:640px; margin-bottom:2.5rem; }
+.dossie-head h2{
+  font-family:var(--font-display); font-weight:600;
+  font-size:clamp(1.6rem,3vw,2.3rem); color:var(--ink-on-paper); margin:.75rem 0 .9rem; line-height:1.2;
+}
+.dossie-head p{ color:var(--muted-on-paper); font-size:.92rem; }
+
+hr.rule{ border:none; border-top:1px solid var(--paper-line); margin:2.5rem 0; }
+
+/* ---------- Folder tabs (navegação de serviços dentro de um hub) ---------- */
+.folder-tabs{ display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:2rem; }
+.folder-tab{
+  display:flex; flex-direction:column; gap:.15rem;
+  padding:.7rem 1.1rem; background:#fff; border:1px solid var(--paper-line);
+  border-bottom:3px solid var(--bronze);
+  border-radius:6px 6px 0 0; text-decoration:none; min-width:180px;
+}
+.folder-tab .n{ font-family:var(--font-mono); font-size:.65rem; color:var(--bronze-dark); }
+.folder-tab .t{ font-weight:700; font-size:.85rem; color:var(--ink-on-paper); }
+
+/* ---------- Cards ---------- */
+.grid-2{ display:grid; grid-template-columns:1fr; gap:1rem; }
+.grid-3{ display:grid; grid-template-columns:1fr; gap:1rem; }
+@media (min-width:800px){
+  .grid-2{ grid-template-columns:1fr 1fr; }
+  .grid-3{ grid-template-columns:repeat(3,1fr); }
+}
+
+.doc-card{
+  background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg);
+  padding:1.6rem; display:flex; flex-direction:column; gap:.85rem;
+  transition:.25s;
+}
+.doc-card:hover{ border-color:var(--bronze); box-shadow:0 16px 30px -12px rgba(38,35,32,0.18); transform:translateY(-3px); }
+.doc-card h3{ font-size:1.02rem; font-weight:700; color:var(--ink-on-paper); }
+.doc-card p{ font-size:.85rem; color:var(--muted-on-paper); flex-grow:1; }
+.doc-card .go{ font-size:.78rem; font-weight:700; color:var(--bronze-dark); text-decoration:none; display:inline-flex; align-items:center; gap:.3rem; }
+
+/* ---------- Processo / passos ---------- */
+.steps{ display:flex; flex-direction:column; gap:0; }
+.step{ display:flex; gap:1.25rem; padding:1.5rem 0; border-bottom:1px solid var(--paper-line); }
+.step:last-child{ border-bottom:none; }
+.step .num{ font-family:var(--font-mono); font-size:.9rem; color:var(--bronze-dark); flex-shrink:0; width:2.4rem; }
+.step h4{ font-size:.95rem; font-weight:700; margin-bottom:.3rem; color:var(--ink-on-paper); }
+.step p{ font-size:.85rem; color:var(--muted-on-paper); }
+
+/* ---------- FAQ (details/summary — sem JS) ---------- */
+.faq-item{ border-bottom:1px solid var(--paper-line); }
+.faq-item summary{
+  cursor:pointer; list-style:none; padding:1.1rem 0;
+  font-weight:700; font-size:.92rem; color:var(--ink-on-paper);
+  display:flex; justify-content:space-between; align-items:center; gap:1rem;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{ content:'+'; font-family:var(--font-mono); font-size:1.2rem; color:var(--bronze-dark); flex-shrink:0; }
+.faq-item[open] summary::after{ content:'–'; }
+.faq-item .a{ padding:0 0 1.2rem; color:var(--muted-on-paper); font-size:.87rem; max-width:640px; }
+
+/* ---------- CTA block (conversão) ---------- */
+.cta-block{
+  background:var(--ink); color:#fff; border-radius:var(--radius-lg);
+  padding:2.5rem; display:flex; flex-direction:column; gap:1.25rem;
+  position:relative; overflow:hidden;
+}
+.cta-block::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(400px 200px at 90% 100%, rgba(176,141,87,0.18), transparent 60%);
+}
+.cta-block-inner{ position:relative; display:flex; flex-wrap:wrap; gap:1.5rem; align-items:center; justify-content:space-between; }
+.cta-block h3{ font-family:var(--font-display); font-size:1.5rem; font-weight:600; margin-bottom:.4rem; }
+.cta-block p{ color:var(--ink-text); font-size:.87rem; max-width:420px; }
+.cta-actions{ display:flex; gap:.6rem; flex-wrap:wrap; }
+
+/* ---------- Formulário ---------- */
+.form-box{ background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg); padding:1.75rem; }
+.form-grid{ display:grid; grid-template-columns:1fr; gap:1rem; }
+@media (min-width:640px){ .form-grid.two{ grid-template-columns:1fr 1fr; } }
+.form-label{ display:block; font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted-on-paper); margin-bottom:.4rem; }
+.form-input{
+  width:100%; background:var(--paper); border:1px solid var(--paper-line); color:var(--ink-on-paper);
+  padding:.7rem .85rem; border-radius:6px; font-size:.85rem; font-family:inherit; outline:none; transition:.2s;
+}
+.form-input:focus{ border-color:var(--bronze); }
+.btn-submit{
+  width:100%; background:var(--ink); color:#fff; font-weight:700; font-size:.9rem;
+  padding:.85rem; border:none; border-radius:6px; cursor:pointer; font-family:inherit;
+}
+.btn-submit:hover{ background:#1c2028; }
+.form-note{ font-size:.72rem; color:var(--muted-on-paper); margin-top:.6rem; text-align:center; }
+
+/* ---------- Breadcrumb ---------- */
+.breadcrumb{ font-size:.75rem; color:var(--ink-muted); padding:1rem 0 0; }
+.breadcrumb a{ text-decoration:none; color:var(--ink-muted); }
+.breadcrumb a:hover{ color:#fff; }
+.breadcrumb.on-paper{ color:var(--muted-on-paper); }
+.breadcrumb.on-paper a{ color:var(--muted-on-paper); }
+.breadcrumb.on-paper a:hover{ color:var(--bronze-dark); }
+
+/* ---------- Prova / credenciais ---------- */
+.credentials-strip{
+  display:flex; flex-wrap:wrap; gap:2rem; padding:1.5rem 0; border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line);
+}
+.credentials-strip .item{ font-size:.78rem; color:var(--muted-on-paper); display:flex; align-items:center; gap:.5rem; }
+.credentials-strip .item b{ color:var(--ink-on-paper); }
+
+/* ---------- Footer ---------- */
+.site-footer{ background:var(--ink); color:var(--ink-muted); padding:3.5rem 0 1.5rem; }
+.footer-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; margin-bottom:2.5rem; }
+@media (min-width:800px){ .footer-grid{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
+.footer-grid h5{ font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; color:#fff; margin-bottom:1rem; }
+.footer-grid ul li{ margin-bottom:.6rem; }
+.footer-grid a{ font-size:.82rem; color:var(--ink-muted); text-decoration:none; }
+.footer-grid a:hover{ color:var(--bronze); }
+.footer-bottom{ border-top:1px solid var(--ink-line); padding-top:1.5rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; font-size:.72rem; }
+
+/* ---------- WhatsApp flutuante ---------- */
+.wa-float{
+  position:fixed; bottom:1.25rem; right:1.25rem; z-index:200;
+  display:flex; align-items:center; gap:.6rem;
+  padding:.55rem 1rem .55rem .55rem;
+  background:rgba(10,12,16,0.92); backdrop-filter:blur(10px);
+  border:1px solid var(--ink-line); border-radius:100px;
+  text-decoration:none; box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transition:.25s;
+}
+.wa-float:hover{ transform:translateY(-2px); border-color:var(--bronze); }
+.wa-icon{ width:30px; height:30px; background:linear-gradient(135deg,#3f6b4c,#2c4d37); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.wa-icon svg{ width:15px; height:15px; color:#fff; }
+.wa-label{ color:#fff; font-size:.76rem; font-weight:600; }
+@media (max-width:640px){ .wa-label{ display:none; } .wa-float{ padding:.55rem; } }
+
+/* ---------- Mobile nav drawer ---------- */
+.mobile-drawer{
+  display:none; position:fixed; inset:0; z-index:150; background:var(--ink);
+  padding:1.5rem 6%; overflow-y:auto;
+}
+.mobile-drawer.open{ display:block; }
+.mobile-drawer a{ display:block; color:#fff; font-size:1.1rem; padding:.9rem 0; border-bottom:1px solid var(--ink-line); text-decoration:none; font-family:var(--font-display); }
+.mobile-drawer .close{ background:none; border:1px solid var(--ink-line); color:#fff; border-radius:6px; padding:.5rem .8rem; margin-bottom:1rem; }
+
+section[id]{ scroll-margin-top:80px; }
+
+
+/* ---------- Artigo ---------- */
+.article-hero{ background:var(--ink); color:var(--ink-text); padding:3.5rem 0 2.5rem; }
+.article-hero .container{ max-width:820px; }
+.article-hero h1{ font-family:var(--font-display); font-size:clamp(1.9rem,4vw,2.9rem); line-height:1.15; color:#fff; margin:.6rem 0 .8rem; font-weight:600; }
+.article-hero .lead{ font-size:1.02rem; color:var(--ink-text); max-width:680px; line-height:1.7; }
+.article-meta{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); margin-top:1.2rem; }
+.article-body{ max-width:720px; margin:0 auto; padding:3rem 6% 4rem; }
+@media(min-width:900px){ .article-body{ padding:3.5rem 0 4rem; } }
+.article-body h2{ font-family:var(--font-display); font-size:1.7rem; font-weight:600; color:var(--ink-on-paper); margin:2.4rem 0 .9rem; line-height:1.25; }
+.article-body h3{ font-size:1.12rem; font-weight:700; color:var(--ink-on-paper); margin:1.8rem 0 .6rem; }
+.article-body p{ margin:0 0 1.1rem; color:#3a352e; font-size:1.02rem; line-height:1.75; }
+.article-body ul.bullets{ list-style:none; margin:0 0 1.3rem; padding:0; }
+.article-body ul.bullets li{ position:relative; padding-left:1.4rem; margin-bottom:.6rem; color:#3a352e; line-height:1.7; }
+.article-body ul.bullets li::before{ content:'—'; position:absolute; left:0; color:var(--bronze-dark); }
+.article-body strong{ color:var(--ink-on-paper); font-weight:700; }
+.callout{ background:var(--paper-2); border-left:3px solid var(--bronze); border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.6rem 0; }
+.callout p{ margin:0; font-size:.98rem; }
+.callout .callout-label{ display:block; font-family:var(--font-mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze-dark); margin-bottom:.4rem; }
+.article-cta{ background:var(--ink); color:var(--ink-text); border-radius:var(--radius-lg); padding:2.2rem; margin:2.8rem 0 1rem; text-align:center; }
+.article-cta h3{ font-family:var(--font-display); font-size:1.5rem; color:#fff; margin:0 0 .6rem; font-weight:600; }
+.article-cta p{ color:var(--ink-text); max-width:480px; margin:0 auto 1.3rem; font-size:.96rem; }
+.article-cta .btn{ display:inline-block; background:var(--bronze); color:#fff; padding:.8rem 1.8rem; border-radius:var(--radius); font-weight:600; text-decoration:none; font-size:.92rem; }
+.article-cta .btn:hover{ background:var(--bronze-dark); }
+.faq-block{ margin:2.4rem 0 1rem; }
+.faq-block details{ border-bottom:1px solid var(--paper-line); padding:1rem 0; }
+.faq-block summary{ font-weight:700; cursor:pointer; color:var(--ink-on-paper); font-size:1rem; list-style:none; }
+.faq-block summary::-webkit-details-marker{ display:none; }
+.faq-block summary::after{ content:'+'; float:right; color:var(--bronze-dark); font-family:var(--font-mono); }
+.faq-block details[open] summary::after{ content:'–'; }
+.faq-block .faq-a{ margin-top:.7rem; color:#3a352e; font-size:.98rem; line-height:1.7; }
+.breadcrumb-art{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.06em; color:var(--ink-muted); }
+.breadcrumb-art a{ color:var(--ink-muted); text-decoration:none; }
+.breadcrumb-art a:hover{ color:#d9c199; }
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Apuração de Haveres na Saída de Sócio: Como se Calcula o Valor Justo","author":{"@type":"Person","name":"Igor L. Brazão","jobTitle":"Economista e Administrador Judicial"},"publisher":{"@type":"Person","name":"Igor L. Brazão"},"description":"Como se apura o valor da quota do sócio que se retira da sociedade."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"O que é apuração de haveres?","acceptedAnswer":{"@type":"Answer","text":"É o cálculo do valor a que tem direito o sócio que se retira, é excluído ou falece, correspondente à sua participação na sociedade. Apura-se, em regra, por balanço de determinação, avaliando o patrimônio a valor de mercado na data da saída."}},
+{"@type":"Question","name":"O valor da quota é o mesmo do capital social?","acceptedAnswer":{"@type":"Answer","text":"Não. O valor patrimonial contábil raramente reflete o valor real. A apuração de haveres avalia ativos e passivos a valor de mercado, podendo incluir intangíveis como fundo de comércio, o que costuma resultar em valor bem diferente do capital registrado."}},
+{"@type":"Question","name":"Qual a data-base da apuração de haveres?","acceptedAnswer":{"@type":"Answer","text":"Em regra, a data da resolução da sociedade em relação ao sócio — que varia conforme a causa da saída (retirada, exclusão ou falecimento). A definição correta da data-base é decisiva, pois é nela que o patrimônio é avaliado."}},
+{"@type":"Question","name":"Como se avalia o fundo de comércio na apuração?","acceptedAnswer":{"@type":"Answer","text":"O fundo de comércio e demais intangíveis integram o valor real da sociedade e, conforme o critério aplicável, devem ser considerados na apuração. Sua mensuração exige metodologia de avaliação econômico-financeira, não apenas leitura do balanço contábil."}}
+]}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Igor L. Brazão — Início"><img src="images/logo.png" alt="Igor L. Brazão" class="brand-mark"></a>
+    <nav class="main-nav">
+      <a href="calculo-judicial-liquidacao-sentenca.html">Cálculo Judicial</a>
+      <div class="has-sub">
+        <a href="recuperacao-judicial-e-falencia.html">Recuperação Judicial &amp; Falência</a>
+        <div class="subnav">
+          <a href="recuperacao-judicial-e-falencia.html#administracao-judicial">Administração Judicial<small>Fiscalização, quadro-geral de credores</small></a>
+          <a href="recuperacao-judicial-e-falencia.html#plano-de-recuperacao">Elaboração de Plano de RJ<small>Viabilidade econômica, projeções</small></a>
+          <a href="portal-aj.html">Portal AJ<small>Plataforma para credores e administradores</small></a>
+        </div>
+      </div>
+      <a href="valuation-apuracao-de-haveres.html">Valuation</a>
+      <a href="artigos.html">Artigos</a>
+      <a href="checajuros.html">ChecaJuros</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <a href="contato.html" class="btn-header">Contato Técnico</a>
+    <button class="nav-toggle" onclick="document.getElementById('drawer').classList.add('open')">☰</button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="drawer">
+  <button class="close" onclick="document.getElementById('drawer').classList.remove('open')">Fechar ✕</button>
+  <a href="calculo-judicial-liquidacao-sentenca.html">Cálculo Judicial</a>
+  <a href="recuperacao-judicial-e-falencia.html">Recuperação Judicial &amp; Falência</a>
+  <a href="portal-aj.html">Portal AJ</a>
+  <a href="valuation-apuracao-de-haveres.html">Valuation</a>
+  <a href="artigos.html">Artigos</a>
+  <a href="checajuros.html">ChecaJuros</a>
+  <a href="contato.html">Contato</a>
+</div>
+
+
+<section class="article-hero">
+  <div class="container">
+    <p class="breadcrumb-art"><a href="index.html">Início</a> / <a href="artigos.html">Artigos</a> / Apuração de haveres</p>
+    <span class="eyebrow on-dark" style="margin-top:1rem;">Valuation &amp; societário</span>
+    <h1>Apuração de haveres na saída de sócio: como se calcula o valor justo</h1>
+    <p class="lead">Quando um sócio sai, a pergunta é uma só: quanto vale a sua parte? A resposta raramente está no capital social. Está no valor real da sociedade — e apurá-lo é um trabalho de avaliação econômica, não de leitura de balanço.</p>
+    <p class="article-meta">Avaliação econômico-financeira · Corecon/RJ 25013</p>
+  </div>
+</section>
+
+<article class="article-body">
+  <p>A saída de um sócio — por retirada, exclusão ou falecimento — abre uma das disputas mais técnicas do direito societário: <strong>quanto vale a participação de quem sai?</strong> A resposta define quanto a sociedade paga e quanto o sócio (ou seus herdeiros) recebe, e a diferença entre um cálculo bem-feito e um cálculo apressado pode ser de vulto.</p>
+
+  <p>O erro mais comum é imaginar que o valor da quota corresponde ao capital social registrado. Não corresponde. O capital social é um número contábil, muitas vezes desatualizado; o valor justo é econômico.</p>
+
+  <h2>O critério: balanço de determinação</h2>
+
+  <p>A apuração de haveres se faz, em regra, por meio de um <strong>balanço de determinação</strong> — um balanço especial, levantado na data da saída, que avalia o patrimônio da sociedade <strong>a valor de mercado</strong>, e não pelo custo histórico contábil.</p>
+
+  <p>Isso significa reavaliar cada ativo e passivo: imóveis pelo valor atual, estoques pelo valor realizável, créditos pela efetiva possibilidade de recebimento, contingências pelo risco real. O balanço contábil ordinário é o ponto de partida — não o resultado.</p>
+
+  <h2>O intangível: onde mora o valor real</h2>
+
+  <p>Em muitas sociedades, o maior valor não está nos bens físicos, mas no <strong>intangível</strong> — a marca, a carteira de clientes, o fundo de comércio, a capacidade de gerar resultados futuros. Ignorar esses elementos subavalia a participação do sócio que sai; superestimá-los onera indevidamente a sociedade.</p>
+
+  <div class="callout">
+    <span class="callout-label">Por que isso vira disputa</span>
+    <p>Sociedade e sócio que sai têm interesses opostos: a primeira tende a defender um valor menor; o segundo, um valor maior. Cada lado sustenta critérios e premissas que puxam o resultado na sua direção. É por isso que a apuração de haveres é terreno fértil para litígio — e por que a <strong>metodologia técnica, defensável e neutra</strong> é o que distingue uma avaliação que se sustenta em juízo de uma que é facilmente atacada.</p>
+  </div>
+
+  <h2>A data-base: um detalhe que muda tudo</h2>
+
+  <p>A avaliação se faz em uma data específica — a data da resolução da sociedade em relação ao sócio, que varia conforme a causa da saída. Definir corretamente essa data-base é decisivo: é nela que o patrimônio é fotografado e avaliado. Uma data equivocada desloca todo o resultado, e frequentemente é o primeiro ponto de divergência entre as partes.</p>
+
+  <h2>Contrato social x critério legal</h2>
+
+  <p>O contrato social pode prever o critério de apuração. Quando prevê de forma clara e válida, ele orienta o cálculo. Quando é omisso, contraditório ou estabelece critério que não reflete o valor real, aplica-se o critério legal e a construção jurisprudencial — que privilegia a apuração ampla, apta a refletir o valor efetivo da participação. Identificar qual critério rege o caso é o primeiro passo técnico da apuração.</p>
+
+  <h2>Um trabalho de avaliação, não de contabilidade</h2>
+
+  <p>Apurar haveres corretamente combina leitura contábil, avaliação econômica e conhecimento do enquadramento jurídico. Exige reconstruir o valor real da sociedade a partir de premissas defensáveis, mensurar intangíveis com método, e produzir um laudo que resista ao contraditório de um adversário com interesse oposto.</p>
+
+  <p>Como economista registrado no Corecon, com atuação em avaliação de empresas e perícia, conduzo essa apuração com o rigor metodológico que a disputa exige — seja assessorando a sociedade, seja o sócio que se retira. <strong>O objetivo é sempre o mesmo: um valor justo, tecnicamente sustentável e apto a encerrar a controvérsia.</strong></p>
+
+  <div class="article-cta">
+    <h3>Saída de sócio para apurar ou contestar?</h3>
+    <p>Conduzo a apuração de haveres com balanço de determinação, avaliação a valor de mercado e mensuração de intangíveis — laudo técnico defensável, seja para a sociedade, seja para o sócio que se retira. Atuação remota, em todo o Brasil.</p>
+    <a href="contato.html?assunto=Apura%C3%A7%C3%A3o%20de%20haveres" class="btn">Solicitar análise do caso</a>
+  </div>
+
+  <div class="faq-block">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>O que é apuração de haveres?</summary>
+      <div class="faq-a">É o cálculo do valor a que tem direito o sócio que se retira, é excluído ou falece, correspondente à sua participação. Apura-se, em regra, por balanço de determinação, avaliando o patrimônio a valor de mercado na data da saída.</div>
+    </details>
+    <details>
+      <summary>O valor da quota é o mesmo do capital social?</summary>
+      <div class="faq-a">Não. O valor contábil raramente reflete o valor real. A apuração avalia ativos e passivos a valor de mercado e pode incluir intangíveis como o fundo de comércio, resultando em valor bem diferente do capital registrado.</div>
+    </details>
+    <details>
+      <summary>Qual a data-base da apuração?</summary>
+      <div class="faq-a">Em regra, a data da resolução da sociedade em relação ao sócio, que varia conforme a causa da saída. Definir corretamente a data-base é decisivo, pois é nela que o patrimônio é avaliado.</div>
+    </details>
+    <details>
+      <summary>Como se avalia o fundo de comércio?</summary>
+      <div class="faq-a">O fundo de comércio e demais intangíveis integram o valor real da sociedade e, conforme o critério aplicável, entram na apuração. Sua mensuração exige metodologia de avaliação econômico-financeira, não apenas a leitura do balanço.</div>
+    </details>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5 style="color:var(--bronze);">Igor L. Brazão</h5>
+        <p style="font-size:.82rem;line-height:1.7;max-width:280px;">Perito e Administrador Judicial · Corecon/RJ 25013. Atuação nacional em perícia econômico-financeira.</p>
+      </div>
+      <div>
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="calculo-judicial-liquidacao-sentenca.html">Cálculo Judicial</a></li>
+          <li><a href="recuperacao-judicial-e-falencia.html">Recuperação Judicial &amp; Falência</a></li>
+          <li><a href="valuation-apuracao-de-haveres.html">Valuation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Plataformas</h5>
+        <ul>
+          <li><a href="portal-aj.html">Portal AJ</a></li>
+          <li><a href="checajuros.html">ChecaJuros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="contato.html">Formulário técnico</a></li>
+          <li><a href="mailto:contato@igorbrazao.com.br">contato@igorbrazao.com.br</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Igor L. Brazão — Perícia &amp; Inteligência Financeira</span>
+      <span>Corecon/RJ 25013 · Sigilo profissional integral</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
