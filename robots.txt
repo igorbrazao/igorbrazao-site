@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /pdfs/
 
 Sitemap: https://igorbrazao.com.br/sitemap.xml
