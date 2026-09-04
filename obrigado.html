@@ -11,24 +11,28 @@
 
   /* ==========================================================================
      CONVERSÃO — formulário de contato enviado com sucesso.
-     Este evento só dispara quando o visitante chega a esta página, ou seja,
-     após um envio bem-sucedido do formulário (Formspree redireciona para cá
-     via campo oculto "_next"). É o ponto de conversão mais confiável para
-     campanhas de tráfego pago: "visita a esta página" pode ser usado
-     diretamente como ação de conversão no Google Ads e no Microsoft/Bing Ads,
-     sem depender de rastrear o clique no botão de um formulário de terceiro.
+     Este evento só dispara quando o visitante chega a esta página vindo do
+     próprio formulário (contato.html redireciona para cá com ?ref=contato
+     após inserir o lead no Supabase com sucesso). Acesso direto a esta URL
+     não conta como conversão — evita inflar as métricas de campanha.
+     "Visita a esta página com ?ref=contato" pode ser usado diretamente como
+     ação de conversão no Google Ads e no Microsoft/Bing Ads.
   ========================================================================== */
-  gtag('event', 'generate_lead', {
-    event_category: 'formulario_contato',
-    event_label: 'obrigado.html',
-    value: 1
-  });
+  if (new URLSearchParams(window.location.search).get('ref') === 'contato') {
+    gtag('event', 'generate_lead', {
+      event_category: 'formulario_contato',
+      event_label: 'obrigado.html',
+      value: 1
+    });
+  }
 
   // -------------------------------------------------------------------------
   // TODO — plataformas de anúncio (preencher ao criar as contas):
   //
   // 1) GOOGLE ADS: crie uma ação de conversão do tipo "Site" → "Visita à
-  //    página de destino", apontando para /obrigado.html. Não é necessário
+  //    página de destino", apontando para /obrigado.html?ref=contato
+  //    (o parâmetro ?ref=contato garante que só conte quem realmente veio
+  //    do formulário, não acesso direto/curioso à URL). Não é necessário
   //    editar este arquivo para isso — a ação de conversão é configurada
   //    inteiramente dentro do Google Ads.
   //    Alternativamente, se preferir importar a conversão do GA4: marque o
@@ -39,7 +43,8 @@
   //    Rastreamento UET, dentro do Microsoft Advertising) e adicione o
   //    snippet abaixo, substituindo XXXXXXX pelo seu ID de tag UET, em TODAS
   //    as páginas do site (não só nesta). Depois, crie uma meta de conversão
-  //    apontando para esta URL (/obrigado.html) no painel do Bing Ads.
+  //    apontando para esta URL (/obrigado.html?ref=contato) no painel do
+  //    Bing Ads.
   //
   //    <script>
   //    (function(w,d,t,r,u){
