@@ -67,9 +67,18 @@
   <section class="dossie">
     <div class="container" style="max-width:680px;">
       <div class="form-box">
-        <form action="https://formspree.io/f/xlgrevrd" method="POST">
-          <input type="hidden" name="_next" value="https://igorbrazao.com.br/obrigado.html">
-          <input type="hidden" name="_subject" value="Novo contato — igorbrazao.com.br">
+        <form id="contato-form" novalidate>
+          <!-- Honeypot anti-spam: campo invisível para humanos, tentador para bots -->
+          <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+            <label for="site_web">Não preencher este campo</label>
+            <input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off">
+          </div>
+          <input type="hidden" name="pagina_origem" id="f-pagina-origem">
+          <input type="hidden" name="utm_source" id="f-utm-source">
+          <input type="hidden" name="utm_medium" id="f-utm-medium">
+          <input type="hidden" name="utm_campaign" id="f-utm-campaign">
+          <input type="hidden" name="utm_term" id="f-utm-term">
+          <input type="hidden" name="utm_content" id="f-utm-content">
           <div class="form-grid two" style="margin-bottom:1rem;">
             <div>
               <label class="form-label">Solicitante / Advogado</label>
@@ -102,7 +111,8 @@
             <input type="checkbox" id="consentimento" name="consentimento" required style="margin-top:.2rem;flex-shrink:0;">
             <label for="consentimento" style="font-size:.78rem;color:var(--muted-on-paper);line-height:1.5;">Autorizo o uso dos meus dados exclusivamente para retorno sobre esta solicitação, conforme a <a href="politica-de-privacidade.html" style="color:var(--bronze-dark);text-decoration:underline;" target="_blank">Política de Privacidade</a>.</label>
           </div>
-          <button type="submit" class="btn-submit">Enviar Solicitação Formal</button>
+          <p id="form-erro" style="display:none;color:#a33;font-size:.82rem;margin-bottom:1rem;">Não foi possível enviar sua solicitação agora. Tente novamente em instantes ou fale pelo WhatsApp abaixo.</p>
+          <button type="submit" id="form-submit-btn" class="btn-submit">Enviar Solicitação Formal</button>
         </form>
       </div>
 
@@ -130,13 +140,84 @@
   <span class="wa-label">Fale Conosco</span>
 </a>
 
+<!-- Cliente Supabase (UMD, sem necessidade de bundler) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
+  // ---------------------------------------------------------------------
+  // Configuração Supabase — projeto "ChecaJuros + Planner" (sa-east-1).
+  // A anon key é segura para uso no navegador: ela só permite INSERT na
+  // tabela "leads", conforme a policy de RLS configurada no banco.
+  // NUNCA coloque a service_role key aqui.
+  // ---------------------------------------------------------------------
+  const SUPABASE_URL = 'https://wmeuciarrmzobfgyzwfo.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndtZXVjaWFycm16b2JmZ3l6d2ZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0OTY0NjIsImV4cCI6MjA4MTA3MjQ2Mn0.8fDdd1iUic-aL_Gh2CjmgDdCP6Ai8JCbPv0TwZoXb38';
+  const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // Preenche "assunto" via query string (?assunto=valuation), como antes
   const params = new URLSearchParams(window.location.search);
-  const assunto = params.get('assunto');
-  if(assunto){
+  const assuntoParam = params.get('assunto');
+  if (assuntoParam) {
     const select = document.getElementById('assunto');
-    if(select) select.value = assunto;
+    if (select) select.value = assuntoParam;
   }
+
+  // Captura de UTM (persistidos em campos ocultos do formulário)
+  document.getElementById('f-pagina-origem').value = window.location.href;
+  document.getElementById('f-utm-source').value = params.get('utm_source') || '';
+  document.getElementById('f-utm-medium').value = params.get('utm_medium') || '';
+  document.getElementById('f-utm-campaign').value = params.get('utm_campaign') || '';
+  document.getElementById('f-utm-term').value = params.get('utm_term') || '';
+  document.getElementById('f-utm-content').value = params.get('utm_content') || '';
+
+  const form = document.getElementById('contato-form');
+  const btn = document.getElementById('form-submit-btn');
+  const erroEl = document.getElementById('form-erro');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    erroEl.style.display = 'none';
+
+    // Honeypot: se um bot preencheu o campo invisível, finge sucesso e não envia nada
+    if (form.site_web.value) {
+      window.location.href = 'obrigado.html?ref=contato';
+      return;
+    }
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    const payload = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      telefone: form.telefone.value.trim() || null,
+      assunto: form.assunto.value || null,
+      mensagem: form.mensagem.value.trim(),
+      consentimento: form.consentimento.checked,
+      pagina_origem: form.pagina_origem.value,
+      utm_source: form.utm_source.value || null,
+      utm_medium: form.utm_medium.value || null,
+      utm_campaign: form.utm_campaign.value || null,
+      utm_term: form.utm_term.value || null,
+      utm_content: form.utm_content.value || null
+    };
+
+    const { error } = await sb.from('leads').insert([payload]);
+
+    if (error) {
+      console.error('Erro ao enviar lead:', error);
+      erroEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Enviar Solicitação Formal';
+      return;
+    }
+
+    window.location.href = 'obrigado.html?ref=contato';
+  });
 </script>
 
 </body>
