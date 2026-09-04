@@ -216,6 +216,24 @@
       return;
     }
 
+    // Lead já está salvo no banco (o essencial). Agora tenta notificar por
+    // e-mail via Resend, chamando a Edge Function diretamente — não depende
+    // do Database Webhook do Supabase. Se o e-mail falhar por qualquer
+    // motivo, o lead já está seguro e o usuário segue normalmente.
+    try {
+      await fetch(SUPABASE_URL + '/functions/v1/send-lead-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          'apikey': SUPABASE_ANON_KEY
+        },
+        body: JSON.stringify({ record: payload })
+      });
+    } catch (emailErr) {
+      console.error('Falha ao notificar por e-mail (lead já salvo no banco):', emailErr);
+    }
+
     window.location.href = 'obrigado.html?ref=contato';
   });
 </script>
