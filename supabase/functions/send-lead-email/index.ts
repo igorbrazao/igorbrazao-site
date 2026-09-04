@@ -15,7 +15,19 @@
 //                      ou leads@igorbrazao.com.br, no domínio verificado)
 // ============================================================================
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "https://igorbrazao.com.br",
+  "Access-Control-Allow-Headers": "authorization, apikey, content-type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+};
+
 Deno.serve(async (req: Request) => {
+  // Requisição de pré-checagem do navegador (CORS preflight) — precisa
+  // responder aqui, senão o navegador bloqueia a chamada real do fetch().
+  if (req.method === "OPTIONS") {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  }
+
   try {
     const payload = await req.json();
 
@@ -26,7 +38,7 @@ Deno.serve(async (req: Request) => {
     if (!lead || !lead.email) {
       return new Response(JSON.stringify({ error: "payload sem lead válido" }), {
         status: 400,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
       });
     }
 
@@ -38,7 +50,7 @@ Deno.serve(async (req: Request) => {
       console.error("RESEND_API_KEY não configurada");
       return new Response(JSON.stringify({ error: "RESEND_API_KEY ausente" }), {
         status: 500,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
       });
     }
 
@@ -90,19 +102,19 @@ Deno.serve(async (req: Request) => {
       console.error("Erro do Resend:", resendResponse.status, errBody);
       return new Response(JSON.stringify({ error: "falha ao enviar via Resend", detail: errBody }), {
         status: 502,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
       });
     }
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   } catch (err) {
     console.error("Erro inesperado em send-lead-email:", err);
     return new Response(JSON.stringify({ error: String(err) }), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
     });
   }
 });
