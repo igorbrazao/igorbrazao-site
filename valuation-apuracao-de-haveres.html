@@ -307,7 +307,7 @@ hr.rule{ border:none; border-top:1px solid var(--paper-line); margin:2.5rem 0; }
 
 /* ---------- Prova / credenciais ---------- */
 .credentials-strip{
-  display:flex; flex-wrap:wrap; gap:2rem; padding:1.5rem 0; border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line);
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem 2rem; padding:1.5rem 0; border-top:1px solid var(--paper-line); border-bottom:1px solid var(--paper-line);
 }
 .credentials-strip .item{ font-size:.78rem; color:var(--muted-on-paper); display:flex; align-items:center; gap:.5rem; }
 .credentials-strip .item b{ color:var(--ink-on-paper); }
