@@ -1,25 +1,25 @@
 {
-  "atualizadoEm": "2026-09-15T15:59:09.178Z",
+  "atualizadoEm": "2026-10-15T16:03:15.491Z",
   "indices": {
     "selicMeta": {
-      "valor": 14,
-      "valorFormatado": "14,00% a.a.",
-      "referencia": "16/09/2026"
+      "valor": 13.75,
+      "valorFormatado": "13,75% a.a.",
+      "referencia": "04/11/2026"
     },
     "trMensal": {
-      "valor": 0.1688,
-      "valorFormatado": "0,1688%",
-      "referencia": "14/09/2026"
+      "valor": 0.1695,
+      "valorFormatado": "0,1695%",
+      "referencia": "14/10/2026"
     },
     "ipcaEAcumulado12m": {
-      "valor": 4.79771060356049,
-      "valorFormatado": "4,80%",
-      "referencia": "01/06/2026"
+      "valor": 4.47180599459005,
+      "valorFormatado": "4,47%",
+      "referencia": "01/09/2026"
     },
     "inpcAcumulado12m": {
-      "valor": 3.983296993694818,
-      "valorFormatado": "3,98%",
-      "referencia": "01/08/2026"
+      "valor": 4.293633136732078,
+      "valorFormatado": "4,29%",
+      "referencia": "01/09/2026"
     }
   }
 }
