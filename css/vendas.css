@@ -113,3 +113,25 @@
 
 /* Selo do cartão não se estica na largura do cartão */
 .doc-card .stamp, .offer-card .stamp{ align-self:flex-start; }
+
+/* Linha de credenciais no topo das páginas de venda */
+.lp-cred{ font-size:.78rem; color:var(--ink-muted); margin:-0.75rem 0 1.5rem; }
+
+/* Tabela "Prazos e Valores" */
+.pt{ background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg); overflow:hidden; }
+.pt-head, .pt-row{ display:grid; grid-template-columns:1.6fr 1.2fr .9fr 1.1fr; gap:1rem; padding:.95rem 1.25rem; align-items:center; }
+.pt-head{ background:var(--ink); color:#fff; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+.pt-group{ padding:.6rem 1.25rem; background:var(--paper-2); font-family:var(--font-mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--bronze-dark); border-top:1px solid var(--paper-line); }
+.pt-row{ border-top:1px solid var(--paper-line); text-decoration:none; color:var(--ink-on-paper); font-size:.88rem; transition:background .15s; }
+.pt-row:hover{ background:var(--bronze-tint); }
+.pt-name{ font-weight:700; }
+.pt-name::after{ content:' →'; color:var(--bronze-dark); }
+.pt-price{ color:var(--muted-on-paper); }
+.pt-price b{ color:var(--ink-on-paper); font-size:1rem; }
+.pt-price small{ display:block; font-size:.74rem; }
+.pt-time, .pt-first{ color:var(--muted-on-paper); }
+@media (max-width:760px){
+  .pt-head{ display:none; }
+  .pt-row{ grid-template-columns:1fr; gap:.25rem; }
+  .pt-price::before, .pt-time::before, .pt-first::before{ content:attr(data-l) ': '; font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:var(--bronze-dark); }
+}
