@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Páginas de venda (destino do Google Ads / Microsoft Ads)
+   Complementa css/base.css — mesmas cores e tipografia.
+   ========================================================================== */
+
+/* Cabeçalho enxuto: sem menu, para não dispersar quem chegou pelo anúncio */
+.lp-header .header-inner{ height:62px; }
+.lp-header .lp-header-cta{ display:flex; gap:.5rem; align-items:center; }
+.lp-header .lp-header-tel{ font-size:.78rem; color:var(--ink-muted); text-decoration:none; display:none; }
+@media (min-width:760px){ .lp-header .lp-header-tel{ display:inline; } }
+
+/* Hero com oferta */
+.lp-hero{ padding:3.5rem 0 3rem; }
+.lp-hero-grid{ position:relative; display:grid; grid-template-columns:1fr; gap:2.25rem; align-items:start; }
+@media (min-width:980px){ .lp-hero-grid{ grid-template-columns:1.15fr .85fr; gap:3rem; } }
+.lp-hero h1{ font-size:clamp(2rem,3.6vw,3rem); margin:.9rem 0 1rem; }
+.lp-hero .lead{ max-width:600px; }
+.lp-checks{ display:flex; flex-direction:column; gap:.55rem; margin:0 0 1.75rem; }
+.lp-checks li{ display:flex; gap:.6rem; align-items:flex-start; color:var(--ink-text); font-size:.9rem; }
+.lp-checks li::before{ content:'✓'; color:#d9c199; font-weight:700; flex-shrink:0; }
+.lp-hero .hero-ctas{ margin-bottom:0; }
+
+/* Cartão da oferta (conferência gratuita) */
+.offer-card{
+  position:relative; background:var(--paper); color:var(--ink-on-paper);
+  border:1px solid var(--bronze); border-radius:var(--radius-lg);
+  padding:1.6rem; box-shadow:0 24px 50px -20px rgba(0,0,0,.55);
+}
+.offer-card .stamp{ margin-bottom:.9rem; }
+.offer-card h2{ font-family:var(--font-display); font-weight:600; font-size:1.55rem; line-height:1.2; margin-bottom:.5rem; }
+.offer-card p.sub{ font-size:.84rem; color:var(--muted-on-paper); margin-bottom:1.1rem; }
+.offer-card .form-label{ margin-bottom:.3rem; }
+.offer-card .form-input{ background:#fff; }
+.offer-card .field{ margin-bottom:.75rem; }
+.offer-card .btn-submit{ margin-top:.25rem; }
+.offer-card .or{ text-align:center; font-size:.72rem; color:var(--muted-on-paper); margin:.8rem 0 .6rem; text-transform:uppercase; letter-spacing:.1em; }
+.btn-wa{
+  display:flex; justify-content:center; align-items:center; gap:.5rem; width:100%;
+  background:#2c4d37; color:#fff; font-weight:700; font-size:.88rem;
+  padding:.8rem; border-radius:6px; text-decoration:none;
+}
+.btn-wa:hover{ background:#3f6b4c; }
+.form-ok{ display:none; background:#eef4ef; border:1px solid #9fbfa8; color:#2c4d37; border-radius:6px; padding:.8rem; font-size:.85rem; }
+.form-err{ display:none; color:#a33; font-size:.8rem; margin:.4rem 0; }
+
+/* Alerta de prazo processual */
+.lp-alert{
+  display:flex; gap:.9rem; align-items:flex-start;
+  background:var(--bronze-tint); border:1px solid var(--bronze); border-radius:var(--radius-lg);
+  padding:1.1rem 1.25rem; font-size:.88rem; color:var(--ink-on-paper);
+}
+.lp-alert b{ color:var(--bronze-dark); }
+
+/* Tabela de investimento */
+.price-grid{ display:grid; grid-template-columns:1fr; gap:1rem; }
+@media (min-width:800px){ .price-grid{ grid-template-columns:repeat(var(--cols,3),1fr); } }
+.price-card{
+  background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg);
+  padding:1.5rem; display:flex; flex-direction:column; gap:.6rem;
+}
+.price-card.featured{ border:2px solid var(--bronze); }
+.price-card h3{ font-size:1rem; font-weight:700; }
+.price-card .price{ font-family:var(--font-display); font-size:2rem; font-weight:600; color:var(--ink-on-paper); line-height:1.1; }
+.price-card .price small{ font-family:var(--font-body); font-size:.75rem; color:var(--muted-on-paper); font-weight:500; display:block; margin-top:.2rem; }
+.price-card ul{ display:flex; flex-direction:column; gap:.35rem; font-size:.84rem; color:var(--muted-on-paper); flex-grow:1; }
+.price-card ul li::before{ content:'— '; color:var(--bronze); }
+.price-card .meta{ font-family:var(--font-mono); font-size:.7rem; color:var(--bronze-dark); letter-spacing:.04em; }
+.price-note{ font-size:.78rem; color:var(--muted-on-paper); margin-top:1rem; }
+
+/* Entregáveis */
+.deliver{ display:grid; grid-template-columns:1fr; gap:.9rem; }
+@media (min-width:800px){ .deliver{ grid-template-columns:1fr 1fr; } }
+.deliver div{ display:flex; gap:.8rem; background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg); padding:1.1rem 1.2rem; }
+.deliver b{ display:block; font-size:.92rem; margin-bottom:.15rem; }
+.deliver span{ font-size:.84rem; color:var(--muted-on-paper); }
+.deliver i{ font-style:normal; font-family:var(--font-mono); color:var(--bronze-dark); font-size:.85rem; flex-shrink:0; }
+
+/* Checklist "antes de contratar" */
+.checklist{ background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg); overflow:hidden; }
+.checklist .row{ display:grid; grid-template-columns:1fr; gap:.3rem; padding:1rem 1.2rem; border-bottom:1px solid var(--paper-line); font-size:.86rem; }
+.checklist .row:last-child{ border-bottom:none; }
+.checklist .row b{ font-size:.9rem; }
+.checklist .row span{ color:var(--muted-on-paper); }
+@media (min-width:760px){ .checklist .row{ grid-template-columns:.9fr 1.1fr; gap:1.5rem; } }
+
+/* Faixa de autoridade */
+.authority{ display:grid; grid-template-columns:1fr; gap:1rem; }
+@media (min-width:800px){ .authority{ grid-template-columns:repeat(4,1fr); } }
+.authority div{ border-left:2px solid var(--bronze); padding:.2rem 0 .2rem .9rem; }
+.authority b{ display:block; font-family:var(--font-display); font-size:1.35rem; font-weight:600; }
+.authority span{ font-size:.8rem; color:var(--muted-on-paper); }
+
+/* Barra fixa de ação no celular */
+.lp-sticky{
+  position:fixed; left:0; right:0; bottom:0; z-index:210;
+  display:flex; gap:.5rem; padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));
+  background:rgba(10,12,16,.96); border-top:1px solid var(--ink-line);
+}
+.lp-sticky a{ flex:1; text-align:center; font-weight:700; font-size:.85rem; padding:.75rem .5rem; border-radius:6px; text-decoration:none; }
+.lp-sticky .s-wa{ background:#2c4d37; color:#fff; }
+.lp-sticky .s-form{ background:var(--bronze); color:#1a1305; }
+@media (min-width:900px){ .lp-sticky{ display:none; } }
+@media (max-width:899px){ body.lp{ padding-bottom:72px; } body.lp .wa-float{ display:none; } }
+
+/* Faixa de serviços com preço (usada nas páginas institucionais) */
+.svc-links{ display:grid; grid-template-columns:1fr; gap:1rem; }
+@media (min-width:800px){ .svc-links{ grid-template-columns:repeat(3,1fr); } }
+.svc-links a{ display:flex; flex-direction:column; gap:.4rem; background:#fff; border:1px solid var(--paper-line); border-radius:var(--radius-lg); padding:1.3rem; text-decoration:none; transition:.2s; }
+.svc-links a:hover{ border-color:var(--bronze); transform:translateY(-2px); }
+.svc-links b{ font-size:.95rem; color:var(--ink-on-paper); }
+.svc-links span{ font-size:.82rem; color:var(--muted-on-paper); }
+.svc-links em{ font-style:normal; font-family:var(--font-mono); font-size:.74rem; color:var(--bronze-dark); }
+
+/* Selo do cartão não se estica na largura do cartão */
+.doc-card .stamp, .offer-card .stamp{ align-self:flex-start; }
