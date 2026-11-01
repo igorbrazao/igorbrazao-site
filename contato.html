@@ -59,7 +59,7 @@
       <div class="hero-inner">
         <span class="eyebrow on-dark">Análise de Viabilidade</span>
         <h1 style="font-size:clamp(1.9rem,3.5vw,2.6rem);">Submeta o seu caso</h1>
-        <p class="lead">Apresente os parâmetros do litígio ou tese técnica. Retorno em até 2 dias úteis.</p>
+        <p class="lead">Apresente os parâmetros do litígio ou tese técnica. Orçamento com preço fechado em até 24 horas úteis.</p>
       </div>
     </div>
   </section>
@@ -140,6 +140,7 @@
   <span class="wa-label">Fale Conosco</span>
 </a>
 
+<script src="js/lead.js"></script>
 <!-- Cliente Supabase (UMD, sem necessidade de bundler) -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script>
@@ -162,12 +163,15 @@
   }
 
   // Captura de UTM (persistidos em campos ocultos do formulário)
-  document.getElementById('f-pagina-origem').value = window.location.href;
-  document.getElementById('f-utm-source').value = params.get('utm_source') || '';
-  document.getElementById('f-utm-medium').value = params.get('utm_medium') || '';
-  document.getElementById('f-utm-campaign').value = params.get('utm_campaign') || '';
-  document.getElementById('f-utm-term').value = params.get('utm_term') || '';
-  document.getElementById('f-utm-content').value = params.get('utm_content') || '';
+  // Se o visitante chegou por um anúncio em outra página, js/lead.js guardou
+  // a campanha, a palavra-chave e o gclid/msclkid: eles seguem com o lead.
+  const attr = function (k) { return params.get(k) || (window.IBAttr ? window.IBAttr.value(k) : '') || ''; };
+  document.getElementById('f-pagina-origem').value = window.IBAttr ? window.IBAttr.resumo() : window.location.href;
+  document.getElementById('f-utm-source').value = attr('utm_source');
+  document.getElementById('f-utm-medium').value = attr('utm_medium');
+  document.getElementById('f-utm-campaign').value = attr('utm_campaign');
+  document.getElementById('f-utm-term').value = attr('utm_term');
+  document.getElementById('f-utm-content').value = attr('utm_content');
 
   const form = document.getElementById('contato-form');
   const btn = document.getElementById('form-submit-btn');
