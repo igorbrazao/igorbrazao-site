@@ -86,9 +86,10 @@ ul{ list-style:none; }
   display:flex; align-items:center; gap:.65rem;
   font-family:var(--font-display); font-weight:600; font-size:1.15rem;
   color:#fff; text-decoration:none;
+  flex-shrink:0;
 }
 .brand-mark{
-  width:42px; height:42px; border-radius:50%;
+  width:42px; height:42px; max-width:none; border-radius:50%;
   background:#fff;
   border:1px solid var(--bronze);
   padding:7px;
